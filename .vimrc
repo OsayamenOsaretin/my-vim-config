@@ -6,6 +6,10 @@
 
 set nocompatible              " be iMproved, required
 set autowrite
+
+" handles confirmation dialogs
+set confirm
+
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -26,20 +30,20 @@ Plugin 'scrooloose/nerdtree'
 " Autocomplete enclosures
 Plugin 'jiangmiao/auto-pairs'
 
-" Ruby on rails
-Plugin 'tpope/vim-rails'
+" Vue
+" Plugin 'posva/vim-vue'
 
 " Syntax highlighting and improved indentation for JavasScript
 Plugin 'pangloss/vim-javascript'
 
-" Autosave changes to disk, don't need :w no more
-Plugin 'vim-scripts/vim-auto-save'
-
 " For linting
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
+
+" For syntax 
+Plugin 'vim-syntastic/syntastic'
 
 " To do git stuff inside vim
-Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-fugitive'
 
 " Treat jsx files as js files for linting
 Plugin 'mxw/vim-jsx'
@@ -47,35 +51,39 @@ Plugin 'mxw/vim-jsx'
 " Easily toggle comments
 Plugin 'scrooloose/nerdcommenter'
 
+" Easy surround with braces/paranthesis
+Plugin 'tpope/vim-surround'
+
+Plugin 'neovimhaskell/haskell-vim'
 " Code completion as you type
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " Show Git diff
-Plugin 'airblade/vim-gitgutter'
+" Plugin 'airblade/vim-gitgutter'
 
 " Use eslint in node_modules instead of global
-Plugin 'mtscout6/syntastic-local-eslint.vim'
+" Plugin 'mtscout6/syntastic-local-eslint.vim'
 
 " Mostly because I want to see the git branch on the status line
-Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline'
 
 " For tsuquyomi
-Plugin 'Shougo/vimproc.vim'
+" Plugin 'Shougo/vimproc.vim'
 
 " Turn vim into a typescript ide
-Plugin 'Quramy/tsuquyomi'
+" Plugin 'Quramy/tsuquyomi'
 
 " Syntax highlighting for Typescript
-Plugin 'leafgarland/typescript-vim'
+" Plugin 'leafgarland/typescript-vim'
 
 " Proper indentation for tsx files
-Plugin 'ianks/vim-tsx'
+" Plugin 'ianks/vim-tsx'
 
 " Elixir support
-Plugin 'elixir-lang/vim-elixir'
+" Plugin 'elixir-lang/vim-elixir'
 
 " Fuzzy Finder Ctrl-p for searching for files
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
 
 " =================================Finish up==============================
 
@@ -129,7 +137,7 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=DarkGrey
 
 " EOL character's colour
-highlight NonText ctermfg=Cyan
+" highlight NonText ctermfg=Cyan
 
 " ============================Code Folding================================
 
