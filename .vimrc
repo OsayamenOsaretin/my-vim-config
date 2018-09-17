@@ -36,11 +36,17 @@ Plugin 'jiangmiao/auto-pairs'
 " Syntax highlighting and improved indentation for JavasScript
 Plugin 'pangloss/vim-javascript'
 
+" Asynchronous Linting Enginer
+Plugin 'w0rp/ale'
+
 " For linting
 " Plugin 'scrooloose/syntastic'
 
 " For syntax 
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
+
+" For asynchronous syntax
+" Plugin '
 
 " To do git stuff inside vim
 " Plugin 'tpope/vim-fugitive'
@@ -229,28 +235,28 @@ let g:NERDSpaceDelims = 1
 
 " ============================Configure Syntastic=========================
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_check_on_up = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_typescript_checkers=['tsuquyomi']
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_loc_list_height = 5
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 1
+" let g:syntastic_check_on_up = 1
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_typescript_checkers=['tsuquyomi']
 
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '🔴'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
+" let g:syntastic_error_symbol = '❌'
+" let g:syntastic_style_error_symbol = '🔴'
+" let g:syntastic_warning_symbol = '⚠️'
+" let g:syntastic_style_warning_symbol = '💩'
 
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
+" highlight link SyntasticErrorSign SignColumn
+" highlight link SyntasticWarningSign SignColumn
+" highlight link SyntasticStyleErrorSign SignColumn
+" highlight link SyntasticStyleWarningSign SignColumn
 
 " Dont show quick fix window, it's annoying
 let g:tsuquyomi_disable_quickfix = 1
@@ -259,6 +265,11 @@ let g:tsuquyomi_disable_quickfix = 1
 
 " The preview window is too distracting
 set completeopt-=preview
+
+" Use eslint linter with javascript
+let g:ale_linter = {
+\  'javascript': ['eslint']
+\}
 
 " =============================================================================
 "                             MY COMMANDS 
