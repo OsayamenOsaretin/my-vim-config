@@ -39,6 +39,9 @@ Plugin 'pangloss/vim-javascript'
 " Asynchronous Linting Enginer
 Plugin 'w0rp/ale'
 
+" Status Line plugin
+Plugin 'vim-airline/vim-airline'
+
 " For linting
 " Plugin 'scrooloose/syntastic'
 
@@ -90,6 +93,9 @@ Plugin 'neovimhaskell/haskell-vim'
 
 " Fuzzy Finder Ctrl-p for searching for files
 " Plugin 'ctrlpvim/ctrlp.vim'
+
+" Tagbar plugin for browsing ctags
+Plugin 'majutsushi/tagbar'
 
 " =================================Finish up==============================
 
@@ -180,6 +186,9 @@ map <leader>s :up<CR>
 " Autoformat current file
 nnoremap <leader>f mkgg=G'k
 
+" map <F2> to tagbar toggle in normal mode
+nmap <F2> :TagbarToggle<CR>
+
 " Save and quit
 map <leader>wq :wq<CR>
 
@@ -267,9 +276,13 @@ let g:tsuquyomi_disable_quickfix = 1
 set completeopt-=preview
 
 " Use eslint linter with javascript
-let g:ale_linter = {
-\  'javascript': ['eslint']
-\}
+let g:ale_linters = {'javascript': ['eslint']}
+
+" show linting errors on status line
+let g:airline#extensions#ale#enabled = 1
+
+" keep gutter sign always open
+let g:ale_sign_column_always = 1
 
 " =============================================================================
 "                             MY COMMANDS 
