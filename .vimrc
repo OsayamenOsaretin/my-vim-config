@@ -42,6 +42,9 @@ Plugin 'w0rp/ale'
 " Status Line plugin
 Plugin 'vim-airline/vim-airline'
 
+" Nice start screen plus session support
+Plugin 'mhinz/vim-startify'
+
 " For linting
 " Plugin 'scrooloose/syntastic'
 
@@ -276,7 +279,10 @@ let g:tsuquyomi_disable_quickfix = 1
 set completeopt-=preview
 
 " Use eslint linter with javascript
-let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_linters = {'javascript': ['prettier', 'eslint']}
+
+" Add fixer
+let g:ale_fixers = ['prettier', 'eslint']
 
 " show linting errors on status line
 let g:airline#extensions#ale#enabled = 1
@@ -284,6 +290,16 @@ let g:airline#extensions#ale#enabled = 1
 " keep gutter sign always open
 let g:ale_sign_column_always = 1
 
+" let g:ale_javascript_prettier_options = ' --stdin\ --parser\ flow\ --single-quote\ --trailing-comma\ all\ --no-bracket-spacing'
+
+
+" persist startify sessions
+" let g:startify_session_persistence = 1
+
+
+map <leader>f :ALEFix<CR>
+
+set vb t_vb=
 " =============================================================================
 "                             MY COMMANDS 
 " =============================================================================
