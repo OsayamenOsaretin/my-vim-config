@@ -22,7 +22,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " My favourite theme
-Plugin 'flazz/vim-colorschemes'
+" Plugin 'flazz/vim-colorschemes'
+
+" Alternate theme
+Plugin 'gkapfham/vim-vitamin-onec'
 
 " To easily browse files 
 Plugin 'scrooloose/nerdtree'
@@ -44,6 +47,12 @@ Plugin 'vim-airline/vim-airline'
 
 " Nice start screen plus session support
 Plugin 'mhinz/vim-startify'
+
+" Pep 8ing Python
+Plugin 'nvie/vim-flake8'
+
+" Autofix pip8 errors
+Plugin 'tell-k/vim-autopep8'
 
 " For linting
 " Plugin 'scrooloose/syntastic'
@@ -140,7 +149,9 @@ set list
 
 " Set colour scheme
 syntax on
-colorscheme evening
+" set termguicolors
+" colorscheme evening
+colorscheme vitaminonec
 
 " Show line numbers by default
 set number
@@ -292,6 +303,8 @@ let g:ale_sign_column_always = 1
 
 " let g:ale_javascript_prettier_options = ' --stdin\ --parser\ flow\ --single-quote\ --trailing-comma\ all\ --no-bracket-spacing'
 
+" Remap vim-autopep8 autofix key
+autocmd FileType python noremap <buffer> <F9> :call Autopep8()<CR>
 
 " persist startify sessions
 " let g:startify_session_persistence = 1
