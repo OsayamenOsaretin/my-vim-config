@@ -305,6 +305,7 @@ let g:ale_sign_column_always = 1
 
 " Remap vim-autopep8 autofix key
 autocmd FileType python noremap <buffer> <F9> :call Autopep8()<CR>
+set shiftwidth=4
 
 " persist startify sessions
 " let g:startify_session_persistence = 1

@@ -118,3 +118,4 @@ alias gcan="git commit --amend --no-edit"
 alias python="python3"
 
 source ~/.iterm2_shell_integration.zsh
+source /usr/local/opt/powerlevel9k@0.6.3/powerlevel9k.zsh-theme
